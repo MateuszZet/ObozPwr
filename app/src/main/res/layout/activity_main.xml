@@ -232,19 +232,25 @@
 
             <Button
                 android:id="@+id/button"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="+"
+                android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/editText"
                 app:layout_constraintStart_toEndOf="@+id/textView"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
                 android:id="@+id/button3"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="72dp"
                 android:text="+"
+                android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/editText"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toEndOf="@+id/textView"
@@ -252,10 +258,13 @@
 
             <Button
                 android:id="@+id/button5"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="144dp"
                 android:text="+"
+                android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/editText"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toEndOf="@+id/textView"
@@ -263,10 +272,13 @@
 
             <Button
                 android:id="@+id/button7"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="216dp"
                 android:text="+"
+                android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/editText"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toEndOf="@+id/textView"
@@ -274,10 +286,13 @@
 
             <Button
                 android:id="@+id/button9"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="288dp"
                 android:text="+"
+                android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/editText"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toEndOf="@+id/textView"
@@ -285,10 +300,13 @@
 
             <Button
                 android:id="@+id/button11"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="360dp"
                 android:text="+"
+                android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/editText"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toEndOf="@+id/textView"
@@ -296,19 +314,25 @@
 
             <Button
                 android:id="@+id/button2"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="-"
+                android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/editText"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
                 android:id="@+id/button4"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="72dp"
                 android:text="-"
+                android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/editText"
@@ -316,10 +340,13 @@
 
             <Button
                 android:id="@+id/button6"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="144dp"
                 android:text="-"
+                android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/editText"
@@ -327,10 +354,13 @@
 
             <Button
                 android:id="@+id/button8"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="216dp"
                 android:text="-"
+                android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/editText"
@@ -338,10 +368,13 @@
 
             <Button
                 android:id="@+id/button10"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="288dp"
                 android:text="-"
+                android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/editText"
@@ -349,10 +382,13 @@
 
             <Button
                 android:id="@+id/button12"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="360dp"
                 android:text="-"
+                android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/editText"
