@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "185498389231",
+    "firebase_url": "https://obozpwr-mz.firebaseio.com",
+    "project_id": "obozpwr-mz",
+    "storage_bucket": "obozpwr-mz.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:185498389231:android:55aaf899a3b71d46",
+        "android_client_info": {
+          "package_name": "com.example.mateusz.obozpwr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "185498389231-rnvho6sa8sctqtva2ck5dsu4glli8ot7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGHdRcq_DZ9m22d9D_e7adixZni8CSZgE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
