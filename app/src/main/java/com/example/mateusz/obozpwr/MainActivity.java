@@ -2,6 +2,7 @@ package com.example.mateusz.obozpwr;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +31,35 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Team tkompania = new Team(0, R.drawable.kompania);
+        Team tksieciune = new Team(0, R.drawable.ksieciune);
+        Team tksiezniczki = new Team(0, R.drawable.ksiezniczki);
+        Team togry = new Team(0, R.drawable.ogry);
+        Team tpinokio = new Team(0, R.drawable.pinokio);
+        Team tsmosiolki = new Team(0, R.drawable.smosiolki);
+
+        final ImageView img= (ImageView) findViewById(R.id.imageView7);
+
+        final int[] imageArray = { R.drawable.kompania, R.drawable.ksieciune,
+                R.drawable.ksiezniczki, R.drawable.ogry,
+                R.drawable.pinokio, R.drawable.smosiolki,
+                };
+
+        final Handler handler = new Handler();
+        Runnable runnable = new Runnable() {
+            int i = 0;
+        
+            public void run() {
+                //img.setImageResource(imageArray[i]);
+                i++;
+                if (i > imageArray.length - 1) {
+                    i = 0;
+                }
+                handler.postDelayed(this, 2000);
+            }
+        };
+        handler.postDelayed(runnable, 2000);
 
         //database reference
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -65,7 +96,6 @@ public class MainActivity extends AppCompatActivity {
                     //value from editText
                     String val = editText.getText().toString();
                     Long val_long = Long.parseLong(val);
-
                     //value from txtView
                     String val2 = textView.getText().toString();
                     Long val_long2 = Long.parseLong(val2);
