@@ -66,8 +66,10 @@ public class MainActivity extends AppCompatActivity {
         final EditText editText5 = (EditText) findViewById(R.id.editText5);
         final EditText editText6 = (EditText) findViewById(R.id.editText6);
 
+        //content of buttons listeners should be in some kind of function bacause is quite redundant
 
-        //buttons +
+        //############################ BUTTONS + #######################################
+
         final Button button = (Button)  findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
@@ -114,68 +116,172 @@ public class MainActivity extends AppCompatActivity {
         button3.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
                     if(isEmpty(editText2) == false) {
-                        //value from editText
-                        String val = editText2.getText().toString();
-                        Long val_long = Long.parseLong(val);
+                        AlertDialog.Builder mBuilder = new AlertDialog.Builder(MainActivity.this);
+                        View mView = getLayoutInflater().inflate(R.layout.dialog_desc,null);
+                        mBuilder.setView(mView);
+                        final AlertDialog dialog = mBuilder.create();
+                        dialog.show();
 
-                        //value from txtView
-                        String val2 = textView2.getText().toString();
-                        Long val_long2 = Long.parseLong(val2);
+                        final EditText opis = (EditText) mView.findViewById(R.id.editTxtOpis);
 
-                        ksieciunie.setValue(val_long + val_long2);
+                        Button button = (Button)  mView.findViewById(R.id.btnOk);
+                        button.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                //value from editText
+                                String val = editText2.getText().toString();
+                                Long val_long = Long.parseLong(val);
+
+                                //value from txtView
+                                String val2 = textView2.getText().toString();
+                                Long val_long2 = Long.parseLong(val2);
+
+                                Calendar c = Calendar.getInstance();
+                                History item = new History(sdf.format(c.getTime()),opis.getText().toString(),val_long);
+                                historia.child("ksieciunie").push().setValue(item);
+                                ksieciunie.setValue(val_long2 + val_long);
+                                dialog.dismiss();
+                            }
+                        });
+                        Button button2 = (Button)  mView.findViewById(R.id.btnAnuluj);
+                        button2.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                dialog.dismiss();
+                            }
+                        });
                     }
                 }
 
 
         });
+
        final Button button5 = (Button) findViewById(R.id.button5);
         button5.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if(isEmpty(editText3) == false) {
-                    //value from editText
-                    String val = editText3.getText().toString();
-                    Long val_long = Long.parseLong(val);
+                    AlertDialog.Builder mBuilder = new AlertDialog.Builder(MainActivity.this);
+                    View mView = getLayoutInflater().inflate(R.layout.dialog_desc,null);
+                    mBuilder.setView(mView);
+                    final AlertDialog dialog = mBuilder.create();
+                    dialog.show();
 
-                    //value from txtView
-                    String val2 = textView3.getText().toString();
-                    Long val_long2 = Long.parseLong(val2);
+                    final EditText opis = (EditText) mView.findViewById(R.id.editTxtOpis);
 
-                    ksiezniczki.setValue(val_long + val_long2);
+                    Button button = (Button)  mView.findViewById(R.id.btnOk);
+                    button.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            //value from editText
+                            String val = editText3.getText().toString();
+                            Long val_long = Long.parseLong(val);
+
+                            //value from txtView
+                            String val2 = textView3.getText().toString();
+                            Long val_long2 = Long.parseLong(val2);
+
+                            Calendar c = Calendar.getInstance();
+                            History item = new History(sdf.format(c.getTime()),opis.getText().toString(),val_long);
+                            historia.child("ksiezniczki").push().setValue(item);
+                            ksiezniczki.setValue(val_long2 + val_long);
+                            dialog.dismiss();
+                        }
+                    });
+                    Button button2 = (Button)  mView.findViewById(R.id.btnAnuluj);
+                    button2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            dialog.dismiss();
+                        }
+                    });
                 }
             }
         });
+
        final Button button7 = (Button) findViewById(R.id.button7);
         button7.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if(isEmpty(editText4) == false) {
-                    //value from editText
-                    String val = editText4.getText().toString();
-                    Long val_long = Long.parseLong(val);
+                    AlertDialog.Builder mBuilder = new AlertDialog.Builder(MainActivity.this);
+                    View mView = getLayoutInflater().inflate(R.layout.dialog_desc,null);
+                    mBuilder.setView(mView);
+                    final AlertDialog dialog = mBuilder.create();
+                    dialog.show();
 
-                    //value from txtView
-                    String val2 = textView4.getText().toString();
-                    Long val_long2 = Long.parseLong(val2);
+                    final EditText opis = (EditText) mView.findViewById(R.id.editTxtOpis);
 
-                    ogry.setValue(val_long + val_long2);
+                    Button button = (Button)  mView.findViewById(R.id.btnOk);
+                    button.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            //value from editText
+                            String val = editText4.getText().toString();
+                            Long val_long = Long.parseLong(val);
+
+                            //value from txtView
+                            String val2 = textView4.getText().toString();
+                            Long val_long2 = Long.parseLong(val2);
+
+                            Calendar c = Calendar.getInstance();
+                            History item = new History(sdf.format(c.getTime()),opis.getText().toString(),val_long);
+                            historia.child("ogry").push().setValue(item);
+                            ogry.setValue(val_long2 + val_long);
+                            dialog.dismiss();
+                        }
+                    });
+                    Button button2 = (Button)  mView.findViewById(R.id.btnAnuluj);
+                    button2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            dialog.dismiss();
+                        }
+                    });
                 }
             }
         });
+
        final Button button9 = (Button) findViewById(R.id.button9);
         button9.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if(isEmpty(editText5) == false) {
-                    //value from editText
-                    String val = editText5.getText().toString();
-                    Long val_long = Long.parseLong(val);
+                    AlertDialog.Builder mBuilder = new AlertDialog.Builder(MainActivity.this);
+                    View mView = getLayoutInflater().inflate(R.layout.dialog_desc,null);
+                    mBuilder.setView(mView);
+                    final AlertDialog dialog = mBuilder.create();
+                    dialog.show();
 
-                    //value from txtView
-                    String val2 = textView5.getText().toString();
-                    Long val_long2 = Long.parseLong(val2);
+                    final EditText opis = (EditText) mView.findViewById(R.id.editTxtOpis);
 
-                    pinokio.setValue(val_long + val_long2);
+                    Button button = (Button)  mView.findViewById(R.id.btnOk);
+                    button.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            //value from editText
+                            String val = editText5.getText().toString();
+                            Long val_long = Long.parseLong(val);
+
+                            //value from txtView
+                            String val2 = textView5.getText().toString();
+                            Long val_long2 = Long.parseLong(val2);
+
+                            Calendar c = Calendar.getInstance();
+                            History item = new History(sdf.format(c.getTime()),opis.getText().toString(),val_long);
+                            historia.child("pinokio").push().setValue(item);
+                            pinokio.setValue(val_long2 + val_long);
+                            dialog.dismiss();
+                        }
+                    });
+                    Button button2 = (Button)  mView.findViewById(R.id.btnAnuluj);
+                    button2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            dialog.dismiss();
+                        }
+                    });
                 }
             }
         });
+
        final Button button11 = (Button) findViewById(R.id.button11);
         button11.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -194,17 +300,17 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View view) {
                             //value from editText
-                            String val = editText.getText().toString();
+                            String val = editText6.getText().toString();
                             Long val_long = Long.parseLong(val);
 
                             //value from txtView
-                            String val2 = textView.getText().toString();
+                            String val2 = textView6.getText().toString();
                             Long val_long2 = Long.parseLong(val2);
 
                             Calendar c = Calendar.getInstance();
                             History item = new History(sdf.format(c.getTime()),opis.getText().toString(),val_long);
-                            historia.child("kompania").push().setValue(item);
-                            kompania.setValue(val_long2 + val_long);
+                            historia.child("smosiolki").push().setValue(item);
+                            smosiolki.setValue(val_long2 + val_long);
                             dialog.dismiss();
                         }
                     });
@@ -221,9 +327,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //######################  BUTTONS -  ##############################
 
-
-        // BUTTONS -
         final Button button2 = (Button) findViewById(R.id.button2);
         button2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -264,57 +369,137 @@ public class MainActivity extends AppCompatActivity {
                         }
                     });
 
-
                 }
             }
         });
+
         final Button button4 = (Button) findViewById(R.id.button4);
         button4.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if(isEmpty(editText2) == false) {
-                    //value from editText
-                    String val = editText2.getText().toString();
-                    Long val_long = Long.parseLong(val);
+                    AlertDialog.Builder mBuilder = new AlertDialog.Builder(MainActivity.this);
+                    View mView = getLayoutInflater().inflate(R.layout.dialog_desc,null);
+                    mBuilder.setView(mView);
+                    final AlertDialog dialog = mBuilder.create();
+                    dialog.show();
 
-                    //value from txtView
-                    String val2 = textView2.getText().toString();
-                    Long val_long2 = Long.parseLong(val2);
+                    final EditText opis = (EditText) mView.findViewById(R.id.editTxtOpis);
 
-                    ksieciunie.setValue(val_long2 - val_long);
+                    Button button = (Button)  mView.findViewById(R.id.btnOk);
+                    button.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            //value from editText
+                            String val = editText2.getText().toString();
+                            Long val_long = Long.parseLong(val);
+
+                            //value from txtView
+                            String val2 = textView2.getText().toString();
+                            Long val_long2 = Long.parseLong(val2);
+
+                            Calendar c = Calendar.getInstance();
+                            History item = new History(sdf.format(c.getTime()),opis.getText().toString(),0-val_long);
+                            historia.child("ksieciunie").push().setValue(item);
+                            ksieciunie.setValue(val_long2 - val_long);
+                            dialog.dismiss();
+                        }
+                    });
+                    Button button2 = (Button)  mView.findViewById(R.id.btnAnuluj);
+                    button2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            dialog.dismiss();
+                        }
+                    });
+
                 }
 
             }
         });
+
         final Button button6 = (Button) findViewById(R.id.button6);
         button6.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if(isEmpty(editText3) == false) {
-                    //value from editText
-                    String val = editText3.getText().toString();
-                    Long val_long = Long.parseLong(val);
+                    AlertDialog.Builder mBuilder = new AlertDialog.Builder(MainActivity.this);
+                    View mView = getLayoutInflater().inflate(R.layout.dialog_desc,null);
+                    mBuilder.setView(mView);
+                    final AlertDialog dialog = mBuilder.create();
+                    dialog.show();
 
-                    //value from txtView
-                    String val2 = textView3.getText().toString();
-                    Long val_long2 = Long.parseLong(val2);
+                    final EditText opis = (EditText) mView.findViewById(R.id.editTxtOpis);
 
-                    ksiezniczki.setValue(val_long2 - val_long);
+                    Button button = (Button)  mView.findViewById(R.id.btnOk);
+                    button.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            //value from editText
+                            String val = editText3.getText().toString();
+                            Long val_long = Long.parseLong(val);
+
+                            //value from txtView
+                            String val2 = textView3.getText().toString();
+                            Long val_long2 = Long.parseLong(val2);
+
+                            Calendar c = Calendar.getInstance();
+                            History item = new History(sdf.format(c.getTime()),opis.getText().toString(),0-val_long);
+                            historia.child("ksiezniczki").push().setValue(item);
+                            ksiezniczki.setValue(val_long2 - val_long);
+                            dialog.dismiss();
+                        }
+                    });
+                    Button button2 = (Button)  mView.findViewById(R.id.btnAnuluj);
+                    button2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            dialog.dismiss();
+                        }
+                    });
+
                 }
 
             }
         });
+
         final Button button8 = (Button) findViewById(R.id.button8);
         button8.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if(isEmpty(editText4) == false) {
-                    //value from editText
-                    String val = editText4.getText().toString();
-                    Long val_long = Long.parseLong(val);
+                    AlertDialog.Builder mBuilder = new AlertDialog.Builder(MainActivity.this);
+                    View mView = getLayoutInflater().inflate(R.layout.dialog_desc,null);
+                    mBuilder.setView(mView);
+                    final AlertDialog dialog = mBuilder.create();
+                    dialog.show();
 
-                    //value from txtView
-                    String val2 = textView4.getText().toString();
-                    Long val_long2 = Long.parseLong(val2);
+                    final EditText opis = (EditText) mView.findViewById(R.id.editTxtOpis);
 
-                    ogry.setValue(val_long2 - val_long);
+                    Button button = (Button)  mView.findViewById(R.id.btnOk);
+                    button.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            //value from editText
+                            String val = editText4.getText().toString();
+                            Long val_long = Long.parseLong(val);
+
+                            //value from txtView
+                            String val2 = textView4.getText().toString();
+                            Long val_long2 = Long.parseLong(val2);
+
+                            Calendar c = Calendar.getInstance();
+                            History item = new History(sdf.format(c.getTime()),opis.getText().toString(),0-val_long);
+                            historia.child("ogry").push().setValue(item);
+                            ogry.setValue(val_long2 - val_long);
+                            dialog.dismiss();
+                        }
+                    });
+                    Button button2 = (Button)  mView.findViewById(R.id.btnAnuluj);
+                    button2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            dialog.dismiss();
+                        }
+                    });
+
                 }
 
             }
@@ -323,15 +508,41 @@ public class MainActivity extends AppCompatActivity {
         button10.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if(isEmpty(editText5) == false) {
-                    //value from editText
-                    String val = editText5.getText().toString();
-                    Long val_long = Long.parseLong(val);
+                    AlertDialog.Builder mBuilder = new AlertDialog.Builder(MainActivity.this);
+                    View mView = getLayoutInflater().inflate(R.layout.dialog_desc,null);
+                    mBuilder.setView(mView);
+                    final AlertDialog dialog = mBuilder.create();
+                    dialog.show();
 
-                    //value from txtView
-                    String val2 = textView5.getText().toString();
-                    Long val_long2 = Long.parseLong(val2);
+                    final EditText opis = (EditText) mView.findViewById(R.id.editTxtOpis);
 
-                    pinokio.setValue(val_long2 - val_long);
+                    Button button = (Button)  mView.findViewById(R.id.btnOk);
+                    button.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            //value from editText
+                            String val = editText5.getText().toString();
+                            Long val_long = Long.parseLong(val);
+
+                            //value from txtView
+                            String val2 = textView5.getText().toString();
+                            Long val_long2 = Long.parseLong(val2);
+
+                            Calendar c = Calendar.getInstance();
+                            History item = new History(sdf.format(c.getTime()),opis.getText().toString(),0-val_long);
+                            historia.child("pinokio").push().setValue(item);
+                            pinokio.setValue(val_long2 - val_long);
+                            dialog.dismiss();
+                        }
+                    });
+                    Button button2 = (Button)  mView.findViewById(R.id.btnAnuluj);
+                    button2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            dialog.dismiss();
+                        }
+                    });
+
                 }
 
             }
@@ -340,15 +551,41 @@ public class MainActivity extends AppCompatActivity {
         button12.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if(isEmpty(editText6) == false) {
-                    //value from editText
-                    String val = editText6.getText().toString();
-                    Long val_long = Long.parseLong(val);
+                    AlertDialog.Builder mBuilder = new AlertDialog.Builder(MainActivity.this);
+                    View mView = getLayoutInflater().inflate(R.layout.dialog_desc,null);
+                    mBuilder.setView(mView);
+                    final AlertDialog dialog = mBuilder.create();
+                    dialog.show();
 
-                    //value from txtView
-                    String val2 = textView6.getText().toString();
-                    Long val_long2 = Long.parseLong(val2);
+                    final EditText opis = (EditText) mView.findViewById(R.id.editTxtOpis);
 
-                    smosiolki.setValue(val_long2 - val_long);
+                    Button button = (Button)  mView.findViewById(R.id.btnOk);
+                    button.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            //value from editText
+                            String val = editText6.getText().toString();
+                            Long val_long = Long.parseLong(val);
+
+                            //value from txtView
+                            String val2 = textView6.getText().toString();
+                            Long val_long2 = Long.parseLong(val2);
+
+                            Calendar c = Calendar.getInstance();
+                            History item = new History(sdf.format(c.getTime()),opis.getText().toString(),0-val_long);
+                            historia.child("smosiolki").push().setValue(item);
+                            smosiolki.setValue(val_long2 - val_long);
+                            dialog.dismiss();
+                        }
+                    });
+                    Button button2 = (Button)  mView.findViewById(R.id.btnAnuluj);
+                    button2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            dialog.dismiss();
+                        }
+                    });
+
                 }
 
             }
