@@ -22,6 +22,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -29,6 +32,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //calendar for date and time
+
+        final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+
 
         //database reference
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -39,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         final DatabaseReference ogry = database.getReference("ogry");
         final DatabaseReference pinokio = database.getReference("pinokio");
         final DatabaseReference smosiolki = database.getReference("smosiolki");
+        final DatabaseReference historia = database.getReference("historia");
 
         //textViews
         final TextView textView = (TextView) findViewById(R.id.textView);
@@ -69,7 +78,9 @@ public class MainActivity extends AppCompatActivity {
                     //value from txtView
                     String val2 = textView.getText().toString();
                     Long val_long2 = Long.parseLong(val2);
-
+                    Calendar c = Calendar.getInstance();
+                    History item = new History(sdf.format(c.getTime()),"Opis",val_long);
+                    historia.child("kompania").push().setValue(item);
                     kompania.setValue(val_long + val_long2);
                 }
             }
@@ -171,7 +182,9 @@ public class MainActivity extends AppCompatActivity {
                     //value from txtView
                     String val2 = textView.getText().toString();
                     Long val_long2 = Long.parseLong(val2);
-
+                    Calendar c = Calendar.getInstance();
+                    History item = new History(sdf.format(c.getTime()),"Opis",0-val_long);
+                    historia.child("kompania").push().setValue(item);
                     kompania.setValue(val_long2 - val_long);
                 }
             }
