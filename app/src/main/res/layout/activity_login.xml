@@ -54,6 +54,16 @@
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:textStyle="normal|bold" />
 
+            <TextView
+                android:id="@+id/autor2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="serif-monospace"
+                android:layout_marginTop="64dp"
+                android:text="Autor: Mateusz Ząbczyk"
+                android:textAlignment="center"
+                />
+
         </LinearLayout>
     </ScrollView>
 

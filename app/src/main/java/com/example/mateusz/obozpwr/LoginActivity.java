@@ -63,7 +63,9 @@ public class LoginActivity extends AppCompatActivity {
 
         //autocomplete input for email     TODO: FILL ARRAY WITH ACTUAL EMAILS!!
         inputEmail = (AutoCompleteTextView) findViewById(R.id.email);
-        String[] EmailArray = new String[]{"test@test.com","atam@atam.com"};
+        String[] EmailArray = new String[]{
+           "test@test.com"
+        };
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.support_simple_spinner_dropdown_item,EmailArray);
         inputEmail.setAdapter(adapter);
         inputPassword = (EditText) findViewById(R.id.password);
