@@ -46,7 +46,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private EditText inputEmail, inputPassword;
+    AutoCompleteTextView inputEmail;
+    private EditText inputPassword;
     private FirebaseAuth auth;
     private Button btnSignup, btnLogin, btnReset;
 
@@ -60,7 +61,11 @@ public class LoginActivity extends AppCompatActivity {
         // set the view now
         setContentView(R.layout.activity_login);
 
-        inputEmail = (EditText) findViewById(R.id.email);
+        //autocomplete input for email     TODO: FILL ARRAY WITH ACTUAL EMAILS!!
+        inputEmail = (AutoCompleteTextView) findViewById(R.id.email);
+        String[] EmailArray = new String[]{"test@test.com","atam@atam.com"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.support_simple_spinner_dropdown_item,EmailArray);
+        inputEmail.setAdapter(adapter);
         inputPassword = (EditText) findViewById(R.id.password);
         btnLogin = (Button) findViewById(R.id.btn_login);
 
