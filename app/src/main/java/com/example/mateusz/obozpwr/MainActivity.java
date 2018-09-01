@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
                             Long val_long2 = Long.parseLong(val2);
 
                             Calendar c = Calendar.getInstance();
-                            History item = new History(sdf.format(c.getTime()),opis.getText().toString(),val_long);
+                            History item = new History(sdf.format(c.getTime()),user.getEmail(),opis.getText().toString(),val_long);
                             historia.child("kompania").push().setValue(item);
                             kompania.setValue(val_long2 + val_long);
                             dialog.dismiss();
@@ -166,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
                                 Long val_long2 = Long.parseLong(val2);
 
                                 Calendar c = Calendar.getInstance();
-                                History item = new History(sdf.format(c.getTime()),opis.getText().toString(),val_long);
+                                History item = new History(sdf.format(c.getTime()),user.getEmail(),opis.getText().toString(),val_long);
                                 historia.child("ksieciunie").push().setValue(item);
                                 ksieciunie.setValue(val_long2 + val_long);
                                 dialog.dismiss();
@@ -210,7 +210,7 @@ public class MainActivity extends AppCompatActivity {
                             Long val_long2 = Long.parseLong(val2);
 
                             Calendar c = Calendar.getInstance();
-                            History item = new History(sdf.format(c.getTime()),opis.getText().toString(),val_long);
+                            History item = new History(sdf.format(c.getTime()),user.getEmail(),opis.getText().toString(),val_long);
                             historia.child("ksiezniczki").push().setValue(item);
                             ksiezniczki.setValue(val_long2 + val_long);
                             dialog.dismiss();
@@ -252,7 +252,7 @@ public class MainActivity extends AppCompatActivity {
                             Long val_long2 = Long.parseLong(val2);
 
                             Calendar c = Calendar.getInstance();
-                            History item = new History(sdf.format(c.getTime()),opis.getText().toString(),val_long);
+                            History item = new History(sdf.format(c.getTime()),user.getEmail(),opis.getText().toString(),val_long);
                             historia.child("ogry").push().setValue(item);
                             ogry.setValue(val_long2 + val_long);
                             dialog.dismiss();
@@ -294,7 +294,7 @@ public class MainActivity extends AppCompatActivity {
                             Long val_long2 = Long.parseLong(val2);
 
                             Calendar c = Calendar.getInstance();
-                            History item = new History(sdf.format(c.getTime()),opis.getText().toString(),val_long);
+                            History item = new History(sdf.format(c.getTime()),user.getEmail(),opis.getText().toString(),val_long);
                             historia.child("pinokio").push().setValue(item);
                             pinokio.setValue(val_long2 + val_long);
                             dialog.dismiss();
@@ -337,7 +337,7 @@ public class MainActivity extends AppCompatActivity {
                             Long val_long2 = Long.parseLong(val2);
 
                             Calendar c = Calendar.getInstance();
-                            History item = new History(sdf.format(c.getTime()),opis.getText().toString(),val_long);
+                            History item = new History(sdf.format(c.getTime()),user.getEmail(),opis.getText().toString(),val_long);
                             historia.child("smosiolki").push().setValue(item);
                             smosiolki.setValue(val_long2 + val_long);
                             dialog.dismiss();
@@ -384,7 +384,7 @@ public class MainActivity extends AppCompatActivity {
                             Long val_long2 = Long.parseLong(val2);
 
                             Calendar c = Calendar.getInstance();
-                            History item = new History(sdf.format(c.getTime()),opis.getText().toString(),0-val_long);
+                            History item = new History(sdf.format(c.getTime()),user.getEmail(),opis.getText().toString(),val_long);
                             historia.child("kompania").push().setValue(item);
                             kompania.setValue(val_long2 - val_long);
                             dialog.dismiss();
@@ -427,7 +427,7 @@ public class MainActivity extends AppCompatActivity {
                             Long val_long2 = Long.parseLong(val2);
 
                             Calendar c = Calendar.getInstance();
-                            History item = new History(sdf.format(c.getTime()),opis.getText().toString(),0-val_long);
+                            History item = new History(sdf.format(c.getTime()),user.getEmail(),opis.getText().toString(),val_long);
                             historia.child("ksieciunie").push().setValue(item);
                             ksieciunie.setValue(val_long2 - val_long);
                             dialog.dismiss();
@@ -471,7 +471,7 @@ public class MainActivity extends AppCompatActivity {
                             Long val_long2 = Long.parseLong(val2);
 
                             Calendar c = Calendar.getInstance();
-                            History item = new History(sdf.format(c.getTime()),opis.getText().toString(),0-val_long);
+                            History item = new History(sdf.format(c.getTime()),user.getEmail(),opis.getText().toString(),val_long);
                             historia.child("ksiezniczki").push().setValue(item);
                             ksiezniczki.setValue(val_long2 - val_long);
                             dialog.dismiss();
@@ -515,7 +515,7 @@ public class MainActivity extends AppCompatActivity {
                             Long val_long2 = Long.parseLong(val2);
 
                             Calendar c = Calendar.getInstance();
-                            History item = new History(sdf.format(c.getTime()),opis.getText().toString(),0-val_long);
+                            History item = new History(sdf.format(c.getTime()),user.getEmail(),opis.getText().toString(),val_long);
                             historia.child("ogry").push().setValue(item);
                             ogry.setValue(val_long2 - val_long);
                             dialog.dismiss();
@@ -558,7 +558,7 @@ public class MainActivity extends AppCompatActivity {
                             Long val_long2 = Long.parseLong(val2);
 
                             Calendar c = Calendar.getInstance();
-                            History item = new History(sdf.format(c.getTime()),opis.getText().toString(),0-val_long);
+                            History item = new History(sdf.format(c.getTime()),user.getEmail(),opis.getText().toString(),val_long);
                             historia.child("pinokio").push().setValue(item);
                             pinokio.setValue(val_long2 - val_long);
                             dialog.dismiss();
@@ -601,7 +601,7 @@ public class MainActivity extends AppCompatActivity {
                             Long val_long2 = Long.parseLong(val2);
 
                             Calendar c = Calendar.getInstance();
-                            History item = new History(sdf.format(c.getTime()),opis.getText().toString(),0-val_long);
+                            History item = new History(sdf.format(c.getTime()),user.getEmail(),opis.getText().toString(),val_long);
                             historia.child("smosiolki").push().setValue(item);
                             smosiolki.setValue(val_long2 - val_long);
                             dialog.dismiss();

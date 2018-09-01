@@ -6,12 +6,14 @@ package com.example.mateusz.obozpwr;
 
 public class History {
     public String date;
+    public String user;
     public String desc;
     public Long points;
 
 
-    public History(String date, String desc, Long points) {
+    public History(String date, String user, String desc, Long points) {
         this.date = date;
+        this.user = user;
         this.desc = desc;
         this.points = points;
     }
@@ -28,6 +30,10 @@ public class History {
         return points;
     }
 
+    public String getUser() {
+        return user;
+    }
+
     public void setDate(String date) {
         this.date = date;
     }
@@ -38,5 +44,10 @@ public class History {
 
     public void setPoints(Long points) {
         this.points = points;
+    }
+
+
+    public void setUser(String user) {
+        this.user = user;
     }
 }
